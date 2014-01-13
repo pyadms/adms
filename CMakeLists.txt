@@ -1,0 +1,4 @@
+PROJECT(ADMS)
+
+ADD_SUBDIRECTORY(admsXml)
+
