@@ -11,11 +11,7 @@ ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/preprocessorYacc.c ${CMAKE_CURRENT_SOURCE_DIR}/preprocessorYacc.h
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     COMMAND bison
-    ARGS -by -d -ppreprocessor preprocessorYacc.y
-    COMMAND mv
-    ARGS -f y.tab.c preprocessorYacc.c 
-    COMMAND mv
-    ARGS -f y.tab.h preprocessorYacc.h 
+    ARGS -by -d -ppreprocessor -opreprocessorYacc.c preprocessorYacc.y
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/preprocessorYacc.y
 )
 
@@ -34,11 +30,7 @@ ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/verilogaYacc.c ${CMAKE_CURRENT_SOURCE_DIR}/verilogaYacc.h
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     COMMAND bison
-    ARGS -by -d -pveriloga verilogaYacc.y
-    COMMAND mv
-    ARGS -f y.tab.c verilogaYacc.c 
-    COMMAND mv
-    ARGS -f y.tab.h verilogaYacc.h 
+    ARGS -by -d -pveriloga -overilogaYacc.c verilogaYacc.y
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/verilogaYacc.y
 )
 
@@ -58,9 +50,7 @@ ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.c ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.h
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     COMMAND bison
-    ARGS -by -padmstpath admstpathYacc.y
-    COMMAND mv
-    ARGS -f y.tab.c admstpathYacc.c 
+    ARGS -by -padmstpath -oadmstpathYacc.c admstpathYacc.y
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.y
 )
 
