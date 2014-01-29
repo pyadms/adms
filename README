@@ -10,4 +10,3 @@ make
 
 admsXml and admsCheck should be in ADMS/cmake/admsXml
 
-do not do parallel make (e.g. make -j2) until the bison generation is made safe.
