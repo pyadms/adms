@@ -10,15 +10,15 @@ SET_TARGET_PROPERTIES(admsPreprocessor PROPERTIES COMPILE_DEFINITIONS insidePrep
 ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/preprocessorYacc.c ${CMAKE_CURRENT_SOURCE_DIR}/preprocessorYacc.h
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMAND bison
-    ARGS -by -d -ppreprocessor -opreprocessorYacc.c preprocessorYacc.y
+    COMMAND ${BISON_EXECUTABLE}
+    ARGS -by -d ${BISON_APIPREFIX}preprocessor -opreprocessorYacc.c preprocessorYacc.y
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/preprocessorYacc.y
 )
 
 ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/preprocessorLex.c
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMAND flex
+    COMMAND ${FLEX_EXECUTABLE}
     ARGS -Ppreprocessor -opreprocessorLex.c preprocessorLex.l
     DEPENDS preprocessorYacc.h
 )
@@ -29,15 +29,15 @@ SET_TARGET_PROPERTIES(admsVeriloga PROPERTIES COMPILE_DEFINITIONS insideVeriloga
 ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/verilogaYacc.c ${CMAKE_CURRENT_SOURCE_DIR}/verilogaYacc.h
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMAND bison
-    ARGS -by -d -pveriloga -overilogaYacc.c verilogaYacc.y
+    COMMAND ${BISON_EXECUTABLE}
+    ARGS -by -d ${BISON_APIPREFIX}veriloga -overilogaYacc.c verilogaYacc.y
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/verilogaYacc.y
 )
 
 ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/verilogaLex.c
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMAND flex
+    COMMAND ${FLEX_EXECUTABLE}
     ARGS -Pveriloga -overilogaLex.c verilogaLex.l
     DEPENDS verilogaYacc.h
 )
@@ -49,8 +49,8 @@ SET_TARGET_PROPERTIES(admsAdmstpath PROPERTIES COMPILE_DEFINITIONS insideadmstpa
 ADD_CUSTOM_COMMAND(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.c ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.h
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMAND bison
-    ARGS -by -padmstpath -oadmstpathYacc.c admstpathYacc.y
+    COMMAND ${BISON_EXECUTABLE}
+    ARGS -by ${BISON_APIPREFIX}admstpath -oadmstpathYacc.c admstpathYacc.y
     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.y
 )
 
