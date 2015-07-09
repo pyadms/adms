@@ -1,12 +1,23 @@
-Requires bison, flex.  Tested on Mac OS X and Ubuntu 12.04.  Changes for other systems should probably be done in admsXml/CMakeLists.txt and admsXml/config.h.
+This is a derived work of ADMS.  Per the terms of the original license, this modified version is under the GNU GPL Version 2.0.
 
-To install:
-cd ADMS
-bash create_files.sh
-mkdir cmake
-cd cmake
-cmake -DCMAKE_BUILD_TYPE=RELEASE ..
-make
 
-admsXml and admsCheck should be in ADMS/cmake/admsXml
+ADMS
+Copyright (C) 2015  Luther T. Cat
+Original code copyright the original authors.
+
+This file is part of ADMS.
+
+ADMS is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 2 of the License.
+
+ADMS is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with ADMS.  If not, see <http://www.gnu.org/licenses/>.
+
+Please see the INSTALL file for build instructions.
 

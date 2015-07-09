@@ -1,1 +1,18 @@
-Please see the README file for instructions on compiling the software.
+Requires bison, flex, and a C++ 11 compliant compiler.  Tested on Mac OS X and Ubuntu 12.04.  Changes for other systems should probably be done in admsJSON/CMakeLists.txt.
+
+cd ..
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=DEBUG ..
+make
+
+admsJSON should be in adms/build/admsJSON
+
+Tests may be run using:
+ctest -j2
+where 2 may be replaced by the number of desired processes.
+
+To run an individual test:
+cd ngspice/ekv
+../../build/admsJSON/admsJSON -I ../include -oekv.json -fekv.va
+

@@ -1,1 +1,2 @@
-adms_build_test(hicum2.va)
+
+adms_tests(hicum2.va)

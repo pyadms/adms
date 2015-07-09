@@ -1,1 +1,1 @@
-adms_build_test(psp102.va)
+adms_tests(psp102.va)

@@ -1,1 +1,1 @@
-adms_build_test(bjt504t.va)
+adms_tests(bjt504t.va)
