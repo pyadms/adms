@@ -393,7 +393,6 @@ static p_continuator adms_preprocessor_get_line_position_cb (std::list<p_continu
   if (it != l.end())
   {
     ret = *it;
-  assert(0);
   }
   return ret;
 }
