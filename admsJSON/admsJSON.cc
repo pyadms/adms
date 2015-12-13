@@ -28,12 +28,15 @@ along with ADMS.  If not, see <http://www.gnu.org/licenses/>.
 #include "json_serializer.h"
 #include <cstdlib>
 #include <cstdio>
+#ifndef _WIN32
 #include <libgen.h>
+#endif
 #include <list>
 #include <string>
 #include <iostream>
 #include <fstream>
 /* examples: /a/b => \0,a,b and a/b/ => a,b,\0*/
+#if 0
 static std::string mydirname (std::string myname)
 {
   char *myin = strdup(myname.c_str());
@@ -41,13 +44,20 @@ static std::string mydirname (std::string myname)
   free(myin);
   return ret;
 }
+#endif
 static std::string mybasename(std::string myname)
 {
+  std::string ret;
+#if _WIN32
+  ret=myname;
+#else
   char *myin = strdup(myname.c_str());
-  std::string ret = basename(myin);
+  ret = basename(myin);
   free(myin);
+#endif
   return ret;
 }
+#if 0
 static std::string filename (std::string myname)
 {
   std::string myfilename;
@@ -60,6 +70,7 @@ static std::string filename (std::string myname)
   }
   return myfilename;
 }
+#endif
 
 static std::list<std::string> getlist_from_argv (const int argc,const char* *argv,const char* opt,const char* argtype)
 {

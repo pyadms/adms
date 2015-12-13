@@ -31,6 +31,13 @@ along with ADMS.  If not, see <http://www.gnu.org/licenses/>.
 #include <cassert>
 #include <string>
 
+#ifdef _WIN32
+#include <io.h>
+#define YY_NO_UNISTD_H
+#else
+#include <unistd.h>
+#endif
+
 static int adms_strtointeger (const char *mystr)
 {
   int val;

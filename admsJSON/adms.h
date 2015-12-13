@@ -31,9 +31,15 @@ along with ADMS.  If not, see <http://www.gnu.org/licenses/>.
 #include <utility>
 #include <functional>
 #include <algorithm>
+#include <iterator>
 
-//// Tested on Mac OS X
+#ifdef _WIN32
+#include <io.h>
+#define F_OK    0       /* Test for existence.  */
+#define YY_NO_UNISTD_H
+#else
 #include <unistd.h>
+#endif
 #include <sys/stat.h>
 #define ADMS_PATH_SEPARATOR "/"
 #define PACKAGE_NAME "adms"

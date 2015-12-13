@@ -37,6 +37,13 @@ along with ADMS.  If not, see <http://www.gnu.org/licenses/>.
 #  define INITIAL 0
 #endif
 
+#ifdef _WIN32
+#include <io.h>
+#define YY_NO_UNISTD_H
+#else
+#include <unistd.h>
+#endif
+
 #define yyflex_unput \
 {\
   int i;\

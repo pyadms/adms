@@ -1,5 +1,9 @@
 ADD_SUBDIRECTORY(admst)
+IF (WIN32)
+SET(DIFFCMD C:/cygwin/bin/diff)
+ELSE (WIN32)
 SET(DIFFCMD /usr/bin/diff)
+ENDIF (WIN32)
 SET(DIFFARGS --brief -w)
 
 
@@ -19,7 +23,7 @@ ENDMACRO(adms_build_json)
 MACRO(adms_import_json arg1)
 ADD_TEST(NAME ${arg1}_import_json
 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-COMMAND ${CMAKE_SOURCE_DIR}/scripts/test_import.py ${arg1}.json
+COMMAND python ${CMAKE_SOURCE_DIR}/scripts/test_import.py ${arg1}.json
 )
 set_tests_properties(${arg1}_import_json PROPERTIES DEPENDS ${arg1}_build_json)
 ENDMACRO(adms_import_json)

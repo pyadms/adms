@@ -82,7 +82,6 @@ void s_analogfunction::get_reference_list_implemented(references_list_t &rlist)
   rlist = {
     mytup1{"module", p_adms_list{_module}},
     mytup1{"lexval", p_adms_list{_lexval}},
-    mytup1{"type", p_adms_list{_type}},
     mytup1{"tree", p_adms_list{_tree}},
   };
 
@@ -96,5 +95,8 @@ void s_analogfunction::get_attribute_list_implemented(attributes_list_t &alist)
 
 void s_analogfunction::get_string_list_implemented(strings_list_t &slist)
 {
+  slist = {
+    mytup2{"type", get_admse_string(_type)},
+  };
 }
 
