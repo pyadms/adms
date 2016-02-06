@@ -1,23 +1,9 @@
-This is a derived work of ADMS.  Per the terms of the original license, this modified version is under the GNU GPL Version 2.0.
+Parts of this project are a derived work of ADMS.
 
+Files in the admsJSON directory are under the GNU GPL Version 2.0.  Other files may be subject to other license terms.  Please look at the individual files in the project directories to determine their copyright and license terms.
 
-ADMS
-Copyright (C) 2015  Luther T. Cat
+Copyright (C) 2015--2016  Luther T. Cat
 Original code copyright the original authors.
-
-This file is part of ADMS.
-
-ADMS is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, version 2 of the License.
-
-ADMS is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with ADMS.  If not, see <http://www.gnu.org/licenses/>.
 
 Please see the INSTALL file for build instructions.
 
