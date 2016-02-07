@@ -159,38 +159,37 @@ void json_write(std::ostream &out, json_map_t &json_index, json_list_t &json_rin
       out << "\n";
     }
     out << "},\n";
-    out << "\"parameters\" : {\n";
+
+    out << "\"parameters\" : {";
     first_k = true;
-    std::ostringstream os1;
-    std::ostringstream os2;
     for (auto k : l->strings) {
+      empty_k = false;
       if (first_k)
       {
+        out << "\n";
         first_k = false;
       }  
       else
       {
-        os1 << ",\n";
+        out << ",\n";
       }
-      print_key_value(os1, std::get<0>(k), std::get<1>(k));
-    }
-    print_key_list(os2, json_index, l->references);
-
-    if ((!os1.str().empty()) && (!os2.str().empty()))
-    {
-      out << os1.str() << ",\n" << os2.str() << "\n";
-    }
-    else if (!os1.str().empty())
-    {
-      out << os1.str() << "\n";
-    }
-    else if (!os2.str().empty())
-    {
-      out << os2.str() << "\n";
+      print_key_value(out, std::get<0>(k), std::get<1>(k));
     }
 
+    if (!empty_k)
+    {
+      out << "\n";
+    }
+    out << "},\n";
 
-    // end of references
+
+    out << "\"references\" : {";
+    std::ostringstream os1;
+    print_key_list(os1, json_index, l->references);
+    if (!os1.str().empty())
+    {
+      out << "\n" << os1.str() << "\n";
+    }
     out << "}\n";
     // end of unit
     out << "}";
