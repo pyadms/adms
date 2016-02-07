@@ -797,7 +797,7 @@ R_s__node
           {
             std::string mylexval1=$1->_string;
             p_node mynode=adms_module_list_node_prepend_by_id_once_or_ignore(mc.gModule,mc.gModule,mylexval1);
-            mc.gTerminalList.push_back(mynode);
+            mc.gNodeList.push_back(mynode);
             extend_list_by_move(mynode->_attribute, mc.gAttributeList);
             extend_list_by_copy(mynode->_attribute, mc.gGlobalAttributeList);
           }
