@@ -33,6 +33,9 @@ along with ADMS.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <algorithm>
 
+// remove deprecated warning from Apple c++ compiler
+#define register
+
 #ifndef INITIAL
 #  define INITIAL 0
 #endif
