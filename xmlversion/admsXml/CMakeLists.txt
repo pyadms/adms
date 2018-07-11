@@ -47,7 +47,7 @@ ADD_LIBRARY(admsAdmstpath admstpathYacc.c)
 SET_SOURCE_FILES_PROPERTIES(admstpathYacc.c admstpathYacc.h admstpathLex.c PROPERTIES GENERATED TRUE)
 SET_TARGET_PROPERTIES(admsAdmstpath PROPERTIES COMPILE_DEFINITIONS insideadmstpathYacc)
 ADD_CUSTOM_COMMAND(
-    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.c ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.h
+    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/admstpathYacc.c
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     COMMAND ${BISON_EXECUTABLE}
     ARGS -by ${BISON_APIPREFIX}admstpath -oadmstpathYacc.c admstpathYacc.y

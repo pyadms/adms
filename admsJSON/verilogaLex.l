@@ -38,6 +38,10 @@ along with ADMS.  If not, see <http://www.gnu.org/licenses/>.
 #include <unistd.h>
 #endif
 
+
+// remove deprecated warning from Apple c++ compiler
+#define register
+
 static int adms_strtointeger (const char *mystr)
 {
   int val;

@@ -1,6 +1,6 @@
 INCLUDE_DIRECTORIES(.)
 #ADD_DEFINITIONS()
-ADD_LIBRARY(admsElement adms.cc
+ADD_LIBRARY(admsElement_JSON adms.cc
 verilogaYacc.cc verilogaLex.cc
 json_serializer.cc
 adms_message.cc
@@ -28,7 +28,7 @@ adms_instance.cc
 adms_block.cc
 )
 
-SET_TARGET_PROPERTIES(admsElement PROPERTIES COMPILE_DEFINITIONS insideElement)
+SET_TARGET_PROPERTIES(admsElement_JSON PROPERTIES COMPILE_DEFINITIONS insideElement)
 
 
 SET_SOURCE_FILES_PROPERTIES(preprocessorYacc.cc preprocessorYacc.hh preprocessorLex.cc PROPERTIES GENERATED TRUE)
@@ -68,5 +68,5 @@ ADD_CUSTOM_COMMAND(
 
 
 ADD_EXECUTABLE(admsJSON admsJSON.cc)
-TARGET_LINK_LIBRARIES(admsJSON admsElement)
+TARGET_LINK_LIBRARIES(admsJSON admsElement_JSON)
 
