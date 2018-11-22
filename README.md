@@ -1,5 +1,6 @@
 
 [![Build Status](https://travis-ci.org/pyadms/adms.svg?branch=master)](https://travis-ci.org/pyadms/adms)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/pyadms/adms?branch=master&svg=true)](https://ci.appveyor.com/project/pyadms/adms)
 
 Parts of this project are a derived work of ADMS.
 
