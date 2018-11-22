@@ -1,0 +1,26 @@
+
+language: cpp
+
+matrix:
+  include:
+  - os: osx
+  - os: linux
+
+#before_install:
+
+#install:
+
+
+script:
+  - |
+    mkdir -p build;
+    cd build;
+    cmake -DCMAKE_BUILD_TYPE=RELEASE ..;
+    cmake --build . -- -j 2;
+    ctest;
+
+#before_deploy:
+
+#deploy:
+
+
